@@ -5,8 +5,8 @@ export default class AuthValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    email: schema.string({ trim: true }, [rules.email()]),
-    password: schema.string({ trim: true })
+    email: schema.string([rules.trim(), rules.email()]),
+    password: schema.string([rules.trim()])
   })
 
   public messages: CustomMessages = {}

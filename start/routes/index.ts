@@ -3,7 +3,8 @@ import './auth'
 import './tshirt'
 import './uniform'
 import './ball'
+import './hat'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return { hello: 'Welcome to Store World Cup API' }
 })

@@ -7,7 +7,7 @@ export default class StoreValidator {
   public schema = schema.create({
     name: schema.string([
       rules.trim(),
-      rules.unique({ table: 'balls', column: 'name' }),
+      rules.unique({ table: 'hats', column: 'name' }),
       rules.minLength(2)
     ]),
     price: schema.number([rules.unsigned()]),
