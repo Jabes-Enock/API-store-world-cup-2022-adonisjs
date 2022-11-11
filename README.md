@@ -46,17 +46,17 @@ I added authentication middleware to allow only authenticated people to access t
 
 The gif below shows an attempt to use the store method to create a new product in the tshirt category with no authentication.
 
-<img src="gitHub/store_attempt_tshirts_denied.gif" />
+<img src="github/store_attempt_tshirts_denied.gif" />
 </br>
 
 To log in, an email and password is required, they should be registered in your table ````users```` in your database. (gif below)
 
-<img src="gitHub/store_attempt_auth_success.gif" />
+<img src="github/store_attempt_auth_success.gif" />
 </br>
 
 Now let's try to store that new tshirt. (gif below)
 
-<img src="gitHub/store_attempt_tshirts_success.gif" />
+<img src="github/store_attempt_tshirts_success.gif" />
 </br>
 
 As we can see, it is now allowed to store a new product. This process is repeated for the other ````update and delete```` methods.
@@ -74,7 +74,7 @@ As we can see, it is now allowed to store a new product. This process is repeate
 
 The gif below shows all these methods working.
 
-<img src="gitHub/crud_operations.gif" />
+<img src="github/crud_operations.gif" />
 </br>
 
 The other routes like ````/uniforms```` ````/balls```` ````/hats```` working the same way
