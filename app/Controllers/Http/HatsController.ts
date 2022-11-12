@@ -4,31 +4,31 @@ import { StoreValidator, UpdateValidator } from 'App/Validators/Hat'
 
 export default class HatsController {
   public async index({}: HttpContextContract) {
-    const uniforms = await Hat.query().orderBy('id')
-    return uniforms
+    const hats = await Hat.query().orderBy('id')
+    return hats
   }
 
   public async store({ request }: HttpContextContract) {
     const data = await request.validate(StoreValidator)
-    const uniform = await Hat.create(data)
-    return uniform
+    const hat = await Hat.create(data)
+    return hat
   }
 
   public async show({ params }: HttpContextContract) {
-    const uniform = await Hat.findOrFail(params.id)
-    return uniform
+    const hat = await Hat.findOrFail(params.id)
+    return hat
   }
 
   public async update({ params, request }: HttpContextContract) {
-    const uniform = await Hat.findOrFail(params.id)
+    const hat = await Hat.findOrFail(params.id)
     const data = await request.validate(UpdateValidator)
-    uniform.merge(data)
-    await uniform.save()
-    return uniform
+    hat.merge(data)
+    await hat.save()
+    return hat
   }
 
   public async destroy({ params }: HttpContextContract) {
-    const uniform = await Hat.findOrFail(params.id)
-    await uniform.delete()
+    const hat = await Hat.findOrFail(params.id)
+    await hat.delete()
   }
 }

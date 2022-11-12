@@ -4,31 +4,31 @@ import { StoreValidator, UpdateValidator } from 'App/Validators/Ball'
 
 export default class BallsController {
   public async index({}: HttpContextContract) {
-    const uniforms = await Ball.query().orderBy('id')
-    return uniforms
+    const balls = await Ball.query().orderBy('id')
+    return balls
   }
 
   public async store({ request }: HttpContextContract) {
     const data = await request.validate(StoreValidator)
-    const uniform = await Ball.create(data)
-    return uniform
+    const ball = await Ball.create(data)
+    return ball
   }
 
   public async show({ params }: HttpContextContract) {
-    const uniform = await Ball.findOrFail(params.id)
-    return uniform
+    const ball = await Ball.findOrFail(params.id)
+    return ball
   }
 
   public async update({ params, request }: HttpContextContract) {
-    const uniform = await Ball.findOrFail(params.id)
+    const ball = await Ball.findOrFail(params.id)
     const data = await request.validate(UpdateValidator)
-    uniform.merge(data)
-    await uniform.save()
-    return uniform
+    ball.merge(data)
+    await ball.save()
+    return ball
   }
 
   public async destroy({ params }: HttpContextContract) {
-    const uniform = await Ball.findOrFail(params.id)
-    await uniform.delete()
+    const ball = await Ball.findOrFail(params.id)
+    await ball.delete()
   }
 }
